@@ -1,0 +1,48 @@
+
+rules:
+  #color
+  color-hex-case: lower
+  color-no-hex: true
+  #function
+  function-comma-space-after: always
+  #numbers
+  number-leading-zero: always
+  #strings
+  string-quotes: single
+  #units
+  unit-case: lower
+  unit-whitelist: ['em', 'rem', 'vw', 'vh', '%', 'q', 's', 'ms']
+  #values
+  value-keyword-case: lower
+  #property
+  shorthand-property-no-redundant-values: true
+  #declaration
+  declaration-bang-space-after: never
+  declaration-bang-space-before: always
+  declaration-no-important: true
+
+  declaration-block-no-duplicate-properties: true
+
+  #selector
+  selector-combinator-space-after: always
+  selector-combinator-space-before: always
+  selector-max-compound-selectors: 4
+  # selector-no-empty: true
+  selector-no-id: true
+  selector-pseudo-element-colon-notation: double
+  selector-type-case: lower
+  #selector list
+  selector-list-comma-newline-after: always
+  selector-list-comma-space-after: always
+  #blocks
+  block-closing-brace-empty-line-before: never
+  block-closing-brace-newline-after: always
+  block-no-empty: true
+  # block-no-single-line: true
+  block-opening-brace-space-before: always
+  #General
+  indentation: 2
+  max-nesting-depth: 3
+  no-duplicate-selectors: true
+  no-eol-whitespace: true
+  no-extra-semicolons: true

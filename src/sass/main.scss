@@ -1,0 +1,12 @@
+/* stylelint-disable */
+$goodColor: #fff;
+/* stylelint-enable */
+
+body {
+  background: red;
+  display: flex;
+}
+
+.selector::before {
+  background: red;
+}
