@@ -1,24 +1,25 @@
 //import npm modules
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Route, Link } from "react-router-dom";
+import Counter from "Counter";
+// import App from "App";
 
 //import project modules
-import { fetchStoreData } from  'actionCreators';
+import { fetchStoreData } from "actionCreators";
 
 @connect(store => {
   const { storeData } = store;
   return {
     ...storeData
-  }
+  };
 })
-
 export default class Main extends Component {
   constructor() {
-    super()
+    super();
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(fetchStoreData());
   }
 
@@ -27,12 +28,18 @@ export default class Main extends Component {
       <main className="app">
         <h1>Hey Now!</h1>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/counter">Counter</Link></li>
+          <li>
+            <Link to="counter">Counter</Link>
+            {/* <Link to="/">Home</Link> */}
+          </li>
         </ul>
         <section className="app-section">
-          { this.props.children ? React.cloneElement(this.props.children, this.props) : `Hey!` }
+          {this.props.children
+            ? React.cloneElement(this.props.children, this.props)
+            : `Hey!`}
         </section>
+        <Route path="/counter" component={Counter} />
+        {/* <Route path="/" component={App} /> */}
       </main>
     );
   }
