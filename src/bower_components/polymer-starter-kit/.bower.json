@@ -1,0 +1,15 @@
+{
+  "name": "polymer-starter-kit",
+  "homepage": "https://github.com/PolymerElements/polymer-starter-kit",
+  "version": "4.0.0",
+  "_release": "4.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.0",
+    "commit": "e0a0f317b6f9c84d9fddac546bb3d8f2025c2dfe"
+  },
+  "_source": "https://github.com/PolymerElements/polymer-starter-kit.git",
+  "_target": "^4.0.0",
+  "_originalSource": "PolymerElements/polymer-starter-kit",
+  "_direct": true
+}

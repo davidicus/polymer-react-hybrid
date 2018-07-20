@@ -70,6 +70,7 @@
     "nock": "^9.0.13",
     "node-sass": "^4.3.0",
     "nodemon": "^1.11.0",
+    "polymer-webpack-loader": "^2.0.2",
     "postcss-loader": "^1.2.2",
     "react-axe": "^2.1.2",
     "redux-mock-store": "^1.2.3",
