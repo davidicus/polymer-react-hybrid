@@ -21,6 +21,7 @@ export default class Counter extends Component {
   render() {
     return (
       <div>
+        <paper-button>aaa</paper-button>
         <img alt="a placeholder" src="/img/thing.png"/>
         <button
           onClick={() => {

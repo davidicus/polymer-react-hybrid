@@ -114,26 +114,31 @@ module.exports = {
   },
   devtool: 'source-map',
   module: {
-   //all loaders used in webpack
     rules: [
       {
-        // If you see a file that ends in .html, send it to these loaders.
         test: /\.html$/,
-        // This is an example of chained loaders in Webpack.
-        // Chained loaders run last to first. So it will run
-        // polymer-webpack-loader, and hand the output to
-        // babel-loader. This let's us transpile JS in our `<script>` elements.
         use: [
-          { loader: 'babel-loader' },
-          { loader: 'polymer-webpack-loader' }
+          { loader: "polymer-webpack-loader" }
+        ],
+        exclude: [
+          path.resolve(__dirname, './src/index.html')
         ]
       },
       {
-        // If you see a file that ends in .js, just send it to the babel-loader.
         test: /\.js$/,
-        use: 'babel-loader'
-        // Optionally exclude node_modules from transpilation except for polymer-webpack-loader:
-        // exclude: /node_modules\/(?!polymer-webpack-loader\/).*/
+        loader: 'babel-loader',
+        include: [
+          path.resolve(__dirname, './node_modules/polymer-webpack-loader'),
+          path.resolve(__dirname, './src'),
+        ],
+        options: {
+          presets:  [ 'es2015' ]
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
       },
       //run static code analysis on js files
       {
@@ -141,11 +146,6 @@ module.exports = {
         enforce: "pre",
         exclude: /node_modules/,
         use: 'eslint-loader',
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
       },
       {
         test: /reset\.scss$/,
