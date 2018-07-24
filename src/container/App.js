@@ -1,3 +1,7 @@
+//import carbon devDependencies
+import 'carbon-components/scss/globals/scss/styles.scss';
+import 'carbon-themes/themes/carbon.scss';
+
 //import npm modules
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';

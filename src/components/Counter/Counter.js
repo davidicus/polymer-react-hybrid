@@ -1,7 +1,5 @@
 //import carbon dependencies
-import 'carbon-components/scss/globals/scss/styles.scss';
-
-import { Button } from 'carbon-components-react';
+import { Button, Tile } from 'carbon-components-react';
 
 import React, { Component } from 'react';
 require('thing');
@@ -26,25 +24,32 @@ export default class Counter extends Component {
   render() {
     return (
       <div>
-        <img alt="a placeholder" src="/img/thing.png"/>
-        <button
-          onClick={() => {
+        <h1 className="bx--type-alpha">Polymer/React Experiment</h1>
+        <Tile>
+          <div>
+            Count: {this.state.count}
+          </div>
+          <button
+            onClick={() => {
+              this.setState({ count: this.state.count + 1 });
+            }}
+          >
+            Normal Button
+          </button>
+
+          <paper-button onClick={() => {
             this.setState({ count: this.state.count + 1 });
-          }}
-        >
-          Count: {this.state.count}
-        </button>
+          }}>
+            Polymer Button
+          </paper-button>
 
-        <paper-button onClick={() => {
-          this.setState({ count: this.state.count + 1 });
-        }}>aaa</paper-button>
+          <Button onClick={() => {
+            this.setState({ count: this.state.count + 1 });
+          }} className="some-class">
+            React Button
+          </Button>
 
-
-        <Button onClick={() => {
-          this.setState({ count: this.state.count + 1 });
-        }} className="some-class">
-          Primary button
-        </Button>
+        </Tile>
       </div>
     );
   }
