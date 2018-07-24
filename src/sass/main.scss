@@ -2,11 +2,14 @@
 $goodColor: #fff;
 /* stylelint-enable */
 
-body {
-  background: red;
-  display: flex;
+.main {
+  padding: 0 5%;
+  h1 {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
 }
 
-.selector::before {
-  background: red;
+.navigation {
+  margin-top: 1rem;
 }
