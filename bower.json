@@ -1,0 +1,21 @@
+{
+  "name": "polymer-react",
+  "description": "My Project ---",
+  "main": "index.js",
+  "authors": [
+    "David Conner"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/davidicus/polymer-react-hybrid",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "paper-button": "^2.1.1"
+  }
+}

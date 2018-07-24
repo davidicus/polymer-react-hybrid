@@ -106,21 +106,46 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'js/[name]_bundled_[chunkhash].js',
   },
+  resolve: {
+    modules: [
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, 'bower_components')
+    ]
+  },
   devtool: 'source-map',
   module: {
-   //all loaders used in webpack
     rules: [
+      {
+        test: /\.html$/,
+        use: [
+          { loader: "polymer-webpack-loader" }
+        ],
+        exclude: [
+          path.resolve(__dirname, './src/index.html')
+        ]
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: [
+          path.resolve(__dirname, './node_modules/polymer-webpack-loader'),
+          path.resolve(__dirname, './src'),
+        ],
+        options: {
+          presets:  [ 'es2015' ]
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
       //run static code analysis on js files
       {
         test: /\.js$/,
         enforce: "pre",
         exclude: /node_modules/,
         use: 'eslint-loader',
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
       },
       {
         test: /reset\.scss$/,
@@ -152,7 +177,7 @@ module.exports = {
       {
         test: /\.(png|jpg|svg)$/,
         use: 'file-loader?name=img/[name].[ext]'
-      },
+      }
     ],
   },
   resolve: {

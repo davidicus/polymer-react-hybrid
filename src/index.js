@@ -4,6 +4,8 @@ import ReactDOM, { render } from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 
+// Import Polymer component
+import './bower_components/paper-button/paper-button.html';
 
 //import project modules
 import store, { history } from './store';
